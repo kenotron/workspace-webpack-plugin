@@ -1,8 +1,8 @@
-const path = require("path");
-const fs = require("fs");
-const lockfile = require("@yarnpkg/lockfile");
-const { fixDuplicates } = require("yarn-deduplicate");
-const { tmpdir } = require("os");
+import path from "path";
+import fs from "fs";
+import lockfile from "@yarnpkg/lockfile";
+import { fixDuplicates } from "yarn-deduplicate";
+import { tmpdir } from "os";
 
 module.exports = function mergeLockFiles(lockFile1Path, lockFile2Path) {
   const tmp = path.join(tmpdir(), "workspace-webpack-plugin", "sometest.lock");
