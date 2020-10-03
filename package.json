@@ -1,0 +1,12 @@
+{
+  "name": "workspace-webpack-plugin",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/kenotron/workspace-webpack-plugin.git",
+  "author": "Ken Chau <kchau@microsoft.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@yarnpkg/lockfile": "^1.1.0",
+    "yarn-deduplicate": "^3.0.0"
+  }
+}
