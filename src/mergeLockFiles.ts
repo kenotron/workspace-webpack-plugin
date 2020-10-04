@@ -3,9 +3,10 @@ import fs from "fs";
 import lockfile from "@yarnpkg/lockfile";
 import { fixDuplicates } from "yarn-deduplicate";
 import { tmpdir } from "os";
+import { v4 as uuid } from "uuid";
 
 module.exports = function mergeLockFiles(lockFile1Path, lockFile2Path) {
-  const tmp = path.join(tmpdir(), "workspace-webpack-plugin", "sometest.lock");
+  const tmp = path.join(tmpdir(), "workspace-webpack-plugin", `${uuid()}.lock`);
   fs.mkdirSync(path.dirname(tmp), { recursive: true });
 
   let lockFile1 = fs.readFileSync(lockFile1Path, "utf-8");
