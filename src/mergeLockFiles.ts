@@ -5,7 +5,7 @@ import { fixDuplicates } from "yarn-deduplicate";
 import { tmpdir } from "os";
 import { v4 as uuid } from "uuid";
 
-module.exports = function mergeLockFiles(lockFile1Path, lockFile2Path) {
+export function mergeLockFiles(lockFile1Path, lockFile2Path) {
   const tmp = path.join(tmpdir(), "workspace-webpack-plugin", `${uuid()}.lock`);
   fs.mkdirSync(path.dirname(tmp), { recursive: true });
 
@@ -24,4 +24,4 @@ module.exports = function mergeLockFiles(lockFile1Path, lockFile2Path) {
   fs.unlinkSync(tmp);
 
   return parsed;
-};
+}
